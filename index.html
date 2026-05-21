@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMKN 2 Tembilahan - Unggul dan Berprestasi</title>
+    <style>
+        /* Reset & General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0d3b66;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo p {
+            font-size: 12px;
+            color: #f4d35e;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-menu a {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #faf0ca;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 59, 102, 0.85), rgba(26, 72, 112, 0.85)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .hero-content h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-content p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            color: #faf0ca;
+        }
+
+        /* Main Container */
+        .container {
+            width: 85%;
+            margin: 40px auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 100px; /* Biar pas diklik link ga ketutupan navbar */
+        }
+
+        h2.section-title {
+            text-align: center;
+            color: #0d3b66;
+            margin-bottom: 30px;
+            position: relative;
+            font-size: 28px;
+        }
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #0077b6;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Visi Misi Section */
+        .visimisi-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #0077b6;
+        }
+        .visimisi-box h3 {
+            color: #0d3b66;
+            margin-bottom: 10px;
+        }
+        .visimisi-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Jurusan Section */
+        .jurusan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .jurusan-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #0077b6;
+        }
+        .jurusan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-top: 4px solid #00b4d8;
+        }
+        .jurusan-num {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .jurusan-card h3 {
+            color: #0d3b66;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .jurusan-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .jurusan-card .kelebihan {
+            margin-top: 10px;
+            font-style: italic;
+            color: #0077b6;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .contact-info, .contact-medsos {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-item span {
+            font-weight: bold;
+            color: #0d3b66;
+        }
+        .contact-item a {
+            color: #0077b6;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover {
+            color: #00b4d8;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d3b66;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+        footer p span {
+            color: #f4d35e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>SMKN 2 TEMBILAHAN</h1>
+                <p>Website Resmi Sekolah Kejuruan</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#profil">Visi & Misi</a></li>
+                <li><a href="#jurusan">Jurusan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Selamat Datang di SMKN 2 Tembilahan</h2>
+            <p>Membentuk Generasi Berkarakter, Kompeten, Inovatif, dan Siap Kerja di Era Global.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="profil">
+            <h2 class="section-title">Visi & Misi</h2>
+            <div class="visimisi-box">
+                <h3>Visi Sekolah</h3>
+                <p><em>"Menjadi lembaga pendidikan kejuruan yang unggul, menghasilkan tamatan yang beriman, bertaqwa, profesional, dan mampu bersaing di pasar kerja global serta berwawasan lingkungan."</em></p>
+                
+                <br>
+                
+                <h3>Misi Sekolah</h3>
+                <ul>
+                    <li>Menanamkan keimanan dan ketaqwaan melalui pengoptimalan kegiatan keagamaan di sekolah.</li>
+                    <li>Menyelenggarakan proses pembelajaran yang berbasis kompetensi, teknologi informasi, dan komunikasi.</li>
+                    <li>Menjalin kemitraan yang erat dengan Dunia Usaha, Dunia Industri, dan Dunia Kerja (DUDIKA).</li>
+                    <li>Mengembangkan potensi peserta didik melalui kegiatan ekstrakurikuler dan literasi.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="jurusan">
+            <h2 class="section-title">Kompetensi Keahlian (Jurusan)</h2>
+            <div class="jurusan-grid">
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">01</div>
+                    <h3>Teknik Komputer Jaringan & Telematika</h3>
+                    <p>Mempelajari instalasi jaringan komputer, administrasi server, keamanan siber, dan infrastruktur telekomunikasi.</p>
+                    <p class="kelebihan">Kelebihan: Sertifikasi industri luas, peluang kerja tinggi di era digital, dibekali skill teknisi & network engineer.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">02</div>
+                    <h3>Teknik Permesinan</h3>
+                    <p>Fokus pada pengoperasian mesin produksi, bubut, milling, serta pengerjaan logam presisi tinggi standar industri.</p>
+                    <p class="kelebihan">Kelebihan: Menguasai teknologi CAD/CAM dan mesin CNC, sangat dicari oleh industri manufaktur dan alat berat.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">03</div>
+                    <h3>Teknik Geospasial Survey Pemetaan Tanah</h3>
+                    <p>Mempelajari teknik pengukuran lahan, pemetaan digital, penginderaan jauh, dan Sistem Informasi Geografis (SIG).</p>
+                    <p class="kelebihan">Kelebihan: Profesi langka dan krusial untuk proyek infrastruktur, pertambangan, dan tata kota.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">04</div>
+                    <h3>Teknik Kendaraan Ringan Otomotif</h3>
+                    <p>Mempelajari perawatan dan perbaikan mesin mobil, sistem sasis, pemindah tenaga, dan sistem kelistrikan otomotif.</p>
+                    <p class="kelebihan">Kelebihan: Praktik dengan teknologi EFI modern, prospek kerja luas di bengkel resmi maupun wirausaha mandiri.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">05</div>
+                    <h3>Teknik Bisnis Sepeda Motor</h3>
+                    <p>Spesialisasi dalam perawatan, trouble-shooting, dan manajemen bisnis bengkel sepeda motor roda dua.</p>
+                    <p class="kelebihan">Kelebihan: Kerja sama kuat dengan pabrikan motor ternama, siap buka lapangan kerja/bengkel mandiri.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">06</div>
+                    <h3>Teknik Elektronika Audio Video</h3>
+                    <p>Mempelajari pembuatan kit elektronika, pemrograman mikrokomputer, perbaikan alat audio visual, dan sistem penyiaran.</p>
+                    <p class="kelebihan">Kelebihan: Skill aplikatif tinggi di rumah tangga & industri hiburan, menguasai dasar teknologi IoT.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">07</div>
+                    <h3>Teknik Tenaga Surya Hidro dan Angin</h3>
+                    <p>Mempelajari perancangan, instalasi, dan pemeliharaan pembangkit listrik berbasis energi terbarukan.</p>
+                    <p class="kelebihan">Kelebihan: Jurusan masa depan yang ramah lingkungan, lulusan dicari untuk proyek energi berkelanjutan.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">08</div>
+                    <h3>Teknik Energi Biomasa</h3>
+                    <p>Fokus pada pengolahan limbah organik menjadi sumber energi alternatif seperti biogas, bioetanol, dan briket.</p>
+                    <p class="kelebihan">Kelebihan: Inovatif dan mandiri energi, berkontribusi besar pada kelestarian lingkungan dan pertanian modern.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">09</div>
+                    <h3>Teknik Desain Arsitektur (DPIB)</h3>
+                    <p>Mempelajari pembuatan gambar perencanaan bangunan, estimasi biaya (RAB), dan desain interior/eksterior secara digital.</p>
+                    <p class="kelebihan">Kelebihan: Mahir software arsitektur (AutoCAD, SketchUp), berpeluang besar jadi drafter profesional atau kontraktor.</p>
+                </div>
+
+                <div class="jurusan-card">
+                    <div class="jurusan-num">10</div>
+                    <h3>Teknik Instalasi Ketenagalistrikan</h3>
+                    <p>Mempelajari pemasangan dan pemeliharaan jaringan listrik bangunan bertingkat, kontrol motor listrik, dan kelistrikan industri.</p>
+                    <p class="kelebihan">Kelebihan: Keahlian bersertifikat yang selalu dibutuhkan di semua sektor industri dan perumahan.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="kontak">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-wrapper">
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>Alamat Sekolah:</span>
+                        <a href="https://maps.google.com/?q=Jl.+SKB+No.01,+Sungai+Beringin,+Kec.+Tembilahan,+Kabupaten+Indragiri+Hilir,+Riau+29281" target="_blank">
+                            Jl. SKB No.01, Sungai Beringin, Kec. Tembilahan, Kabupaten Indragiri Hilir, Riau 29281
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <span>Email Resmi:</span>
+                        <a href="mailto:smkn2tembilahan.inhil@gmail.com">smkn2tembilahan.inhil@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>Nomor Telepon/WA:</span>
+                        <a href="https://wa.me/6281268102595" target="_blank">0812-6810-2595</a>
+                    </div>
+                </div>
+
+                <div class="contact-medsos">
+                    <div class="contact-item">
+                        <span>Instagram Resmi:</span>
+                        <a href="https://www.instagram.com/official.smkn2tembilahan" target="_blank">@official.smkn2tembilahan</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>TikTok Resmi:</span>
+                        <a href="https://www.tiktok.com/@officialsmkn2.tembilahan" target="_blank">@officialsmkn2.tembilahan</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>URL Website Sekolah:</span>
+                        <a href="https://www.smkn2tembilahan.sch.id" target="_blank" style="font-weight: bold; color: #0d3b66;">www.smkn2tembilahan.sch.id</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <span>SMKN 2 Tembilahan</span>. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
